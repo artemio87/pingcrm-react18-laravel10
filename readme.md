@@ -87,3 +87,4 @@ phpunit
 - Original work by Jonathan Reinink (@reinink) and contributors
 - Port to Ruby on Rails by Georg Ledermann (@ledermann)
 - Port to React by Lado Lomidze (@landish)
+- Upgrade to laravel 10 + inertia 1.0 + React 18 Artemio Rodriguez (@artemio87)
