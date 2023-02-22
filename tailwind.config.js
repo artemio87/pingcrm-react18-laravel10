@@ -1,6 +1,5 @@
 module.exports = {
-  purge: ['./resources/views/**/*.blade.php', './resources/js/**/*.js'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./resources/views/**/*.blade.php', './resources/js/**/*.js', './resources/js/**/*.jsx'],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -76,9 +75,6 @@ module.exports = {
         900: '#3c366b'
       }
     }
-  },
-  variants: {
-    extend: {}
   },
   plugins: []
 };
