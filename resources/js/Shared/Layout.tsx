@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import MainMenu from '@/Shared/MainMenu';
-import FlashMessages from '@/Shared/FlashMessages';
-import TopHeader from '@/Shared/TopHeader';
-import BottomHeader from '@/Shared/BottomHeader';
+import MainMenu from '@/Shared/MainMenu.tsx';
+import FlashMessages from '@/Shared/FlashMessages.tsx';
+import TopHeader from '@/Shared/TopHeader.tsx';
+import BottomHeader from '@/Shared/BottomHeader.tsx';
 
 export default function Layout({ title, children }) {
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, usePage } from '@inertiajs/react';
-import Layout from '@/Shared/Layout';
-import Icon from '@/Shared/Icon';
-import SearchFilter from '@/Shared/SearchFilter';
-import Pagination from '@/Shared/Pagination';
+import Layout from '@/Shared/Layout.tsx';
+import Icon from '@/Shared/Icon.tsx';
+import SearchFilter from '@/Shared/SearchFilter.tsx';
+import Pagination from '@/Shared/Pagination.tsx';
 
 const Index = () => {
   const { organizations } = usePage().props;

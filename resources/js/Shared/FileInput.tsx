@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { filesize } from '@/utils';
+import { filesize } from '@/utils.tsx';
 
 const Button = ({ text, onClick }) => (
   <button

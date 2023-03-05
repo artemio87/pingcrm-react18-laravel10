@@ -1,41 +1,73 @@
 import React from 'react';
-import { Link, useForm } from '@inertiajs/react';
-import Layout from '@/Shared/Layout';
-import LoadingButton from '@/Shared/LoadingButton';
-import TextInput from '@/Shared/TextInput';
-import SelectInput from '@/Shared/SelectInput';
-import FileInput from '@/Shared/FileInput';
+import Helmet from 'react-helmet';
+import { Link, usePage, useForm, router } from '@inertiajs/react';
+import Layout from '@/Shared/Layout.tsx';
+import DeleteButton from '@/Shared/DeleteButton.tsx';
+import LoadingButton from '@/Shared/LoadingButton.tsx';
+import TextInput from '@/Shared/TextInput.tsx';
+import SelectInput from '@/Shared/SelectInput.tsx';
+import FileInput from '@/Shared/FileInput.tsx';
+import TrashedMessage from '@/Shared/TrashedMessage.tsx';
 
-const Create = () => {
+const Edit = () => {
+  const { user } = usePage().props;
   const { data, setData, errors, post, processing } = useForm({
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    owner: '0',
-    photo: ''
+    first_name: user.first_name || '',
+    last_name: user.last_name || '',
+    email: user.email || '',
+    password: user.password || '',
+    owner: user.owner ? '1' : '0' || '0',
+    photo: '',
+
+    // NOTE: When working with Laravel PUT/PATCH requests and FormData
+    // you SHOULD send POST request and fake the PUT request like this.
+    _method: 'PUT'
   });
 
   function handleSubmit(e) {
     e.preventDefault();
-    post(route('users.store'));
+
+    // NOTE: We are using POST method here, not PUT/PACH. See comment above.
+    post(route('users.update', user.id));
+  }
+
+  function destroy() {
+    if (confirm('Are you sure you want to delete this user?')) {
+      router.delete(route('users.destroy', user.id));
+    }
+  }
+
+  function restore() {
+    if (confirm('Are you sure you want to restore this user?')) {
+      router.put(route('users.restore', user.id));
+    }
   }
 
   return (
     <div>
-      <div>
-        <h1 className="mb-8 text-3xl font-bold">
+      <Helmet title={`${data.first_name} ${data.last_name}`} />
+      <div className="flex justify-start max-w-lg mb-8">
+        <h1 className="text-3xl font-bold">
           <Link
             href={route('users')}
             className="text-indigo-600 hover:text-indigo-700"
           >
             Users
           </Link>
-          <span className="font-medium text-indigo-600"> /</span> Create
+          <span className="mx-2 font-medium text-indigo-600">/</span>
+          {data.first_name} {data.last_name}
         </h1>
+        {user.photo && (
+          <img className="block w-8 h-8 ml-4 rounded-full" src={user.photo} />
+        )}
       </div>
+      {user.deleted_at && (
+        <TrashedMessage onRestore={restore}>
+          This user has been deleted.
+        </TrashedMessage>
+      )}
       <div className="max-w-3xl overflow-hidden bg-white rounded shadow">
-        <form name="createForm" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="flex flex-wrap p-8 -mb-8 -mr-6">
             <TextInput
               className="w-full pb-8 pr-6 lg:w-1/2"
@@ -92,13 +124,16 @@ const Create = () => {
               onChange={photo => setData('photo', photo)}
             />
           </div>
-          <div className="flex items-center justify-end px-8 py-4 bg-gray-100 border-t border-gray-200">
+          <div className="flex items-center px-8 py-4 bg-gray-100 border-t border-gray-200">
+            {!user.deleted_at && (
+              <DeleteButton onDelete={destroy}>Delete User</DeleteButton>
+            )}
             <LoadingButton
               loading={processing}
               type="submit"
-              className="btn-indigo"
+              className="ml-auto btn-indigo"
             >
-              Create User
+              Update User
             </LoadingButton>
           </div>
         </form>
@@ -107,6 +142,6 @@ const Create = () => {
   );
 };
 
-Create.layout = page => <Layout title="Create User" children={page} />;
+Edit.layout = page => <Layout children={page} />;
 
-export default Create;
+export default Edit;

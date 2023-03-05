@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link , usePage, useForm } from '@inertiajs/react';
-import Layout from '@/Shared/Layout';
-import LoadingButton from '@/Shared/LoadingButton';
-import TextInput from '@/Shared/TextInput';
-import SelectInput from '@/Shared/SelectInput';
+import Layout from '@/Shared/Layout.tsx';
+import LoadingButton from '@/Shared/LoadingButton.tsx';
+import TextInput from '@/Shared/TextInput.tsx';
+import SelectInput from '@/Shared/SelectInput.tsx';
 
 const Create = () => {
   const { organizations } = usePage().props;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
 import classNames from 'classnames';
-import Icon from '@/Shared/Icon';
+import Icon from '@/Shared/Icon.tsx';
 
 export default ({ icon, link, text }) => {
   const isActive = route().current(link + '*');

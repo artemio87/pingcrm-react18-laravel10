@@ -1,5 +1,5 @@
 import React from 'react';
-import MainMenuItem from '@/Shared/MainMenuItem';
+import MainMenuItem from '@/Shared/MainMenuItem.tsx';
 
 export default ({ className }) => {
   return (

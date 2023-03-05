@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
-import Layout from '@/Shared/Layout';
+import Layout from '@/Shared/Layout.tsx';
 
 const Dashboard = () => {
   return (

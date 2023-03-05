@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useForm } from '@inertiajs/react';
-import Logo from '@/Shared/Logo';
-import LoadingButton from '@/Shared/LoadingButton';
-import TextInput from '@/Shared/TextInput';
+import Logo from '@/Shared/Logo.tsx';
+import LoadingButton from '@/Shared/LoadingButton.tsx';
+import TextInput from '@/Shared/TextInput.tsx';
 
 export default () => {
   const { data, setData, errors, post, processing } = useForm({

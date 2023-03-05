@@ -1,12 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link, usePage, useForm, router } from '@inertiajs/react';
-import Layout from '@/Shared/Layout';
-import DeleteButton from '@/Shared/DeleteButton';
-import LoadingButton from '@/Shared/LoadingButton';
-import TextInput from '@/Shared/TextInput';
-import SelectInput from '@/Shared/SelectInput';
-import TrashedMessage from '@/Shared/TrashedMessage';
+import Layout from '@/Shared/Layout.tsx';
+import DeleteButton from '@/Shared/DeleteButton.tsx';
+import LoadingButton from '@/Shared/LoadingButton.tsx';
+import TextInput from '@/Shared/TextInput.tsx';
+import SelectInput from '@/Shared/SelectInput.tsx';
+import TrashedMessage from '@/Shared/TrashedMessage.tsx';
 
 const Edit = () => {
   const { contact, organizations } = usePage().props;

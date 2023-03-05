@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./resources/views/**/*.blade.php', './resources/js/**/*.js', './resources/js/**/*.jsx'],
+  content: ['./resources/views/**/*.blade.php', './resources/js/**/*.js', './resources/js/**/*.jsx', './resources/js/**/*.tsx'],
   theme: {
     colors: {
       transparent: 'transparent',

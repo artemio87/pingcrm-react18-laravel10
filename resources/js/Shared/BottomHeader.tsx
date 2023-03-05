@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, usePage } from '@inertiajs/react';
-import Icon from '@/Shared/Icon';
+import Icon from '@/Shared/Icon.tsx';
 
 export default () => {
   const { auth } = usePage().props;

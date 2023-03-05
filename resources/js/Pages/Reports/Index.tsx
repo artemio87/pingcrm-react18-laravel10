@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '@/Shared/Layout';
+import Layout from '@/Shared/Layout.tsx';
 
 const Index = () => {
   return (

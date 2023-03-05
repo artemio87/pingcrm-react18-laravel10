@@ -10,16 +10,16 @@ createInertiaApp({
   progress: {
     color: '#ED8936',
   },
-  resolve: name => {
-    const pages = import.meta.glob('./Pages/**/*.jsx', { eager: true })
-    return pages[`./Pages/${name}.jsx`]
-  },
+  resolve: (name) =>
+    resolvePageComponent(
+      `./Pages/${name}.tsx`,
+      import.meta.glob("./Pages/**/*.tsx")
+    ),
   setup({ el, App, props }) {
-    createRoot(el).render(<App {...props} />)
+    createRoot(el).render(<App {...props} />);
   },
 })
 
 Sentry.init({
-  dsn: process.env.MIX_SENTRY_LARAVEL_DSN
+  dsn: import.meta.env.VITE_SENTRY_LARAVEL_DSN
 });
-
