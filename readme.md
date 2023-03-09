@@ -38,6 +38,7 @@ Or
 ```sh
 yarn install
 ```
+** Remember use npm or yarn only one and before make the install delete not used lock file.
 
 Build assets:
 

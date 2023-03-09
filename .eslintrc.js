@@ -10,7 +10,9 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-undef': 'off',
-    'react/display-name': false,
-    'react/prop-types': false
+    'react/display-name': 'off',
+    'react/prop-types': 'off',
+    allowImportExportEverywhere: false,
+    codeFrame: true
   }
 };
