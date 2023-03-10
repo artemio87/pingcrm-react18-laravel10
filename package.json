@@ -2,18 +2,15 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "lint": "eslint ./resources/js/ --ext .js --ext .jsx"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.18.6",
     "@inertiajs/react": "^1.0.2",
     "@sentry/browser": "^7.38.0",
     "axios": "^1.3.3",
     "classnames": "^2.3.2",
-    "cross-env": "^7.0.3",
-    "eslint": "^8.34.0",
     "lodash": "^4.17.21",
-    "postcss-import": "^15.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -22,12 +19,17 @@
     "tailwindcss": "^3.2.7"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.35.0",
     "eslint-plugin-react": "^7.32.2",
     "laravel-vite-plugin": "^0.7.4",
     "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
     "react-refresh": "^0.14.0",
     "vite": "^4.1.4"
   }

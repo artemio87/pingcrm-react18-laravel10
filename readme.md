@@ -6,13 +6,20 @@ A demo application to illustrate how [Inertia.js](https://inertiajs.com/) works 
 
 ![](https://raw.githubusercontent.com/landish/pingcrm-react/master/screenshot.png)
 
+## Requirements
+
+```
+PHP 8.1 or higher
+Node ^14.18.0 || >=16.0.0
+```
+
 ## Installation
 
 Clone the repo locally:
 
 ```sh
-git clone https://github.com/landish/pingcrm-react.git
-cd pingcrm-react
+git clone https://github.com/artemio87/pingcrm-react18-laravel10
+cd pingcrm-react18-laravel10
 ```
 
 Install PHP dependencies:
@@ -26,11 +33,22 @@ Install NPM dependencies:
 ```sh
 npm install
 ```
+Or
+
+```sh
+yarn install
+```
 
 Build assets:
 
 ```sh
 npm run dev
+```
+
+Or
+
+```sh
+yarn dev
 ```
 
 Setup configuration:
@@ -73,6 +91,11 @@ You're ready to go! [Visit Ping CRM](http://127.0.0.1:8000/) in your browser, an
 
 - **Username:** johndoe@example.com
 - **Password:** secret
+
+** you need to make sure APP_URL on .env is setted like:
+```code
+APP_URL=http://127.0.0.1:8000
+```
 
 ## Running tests
 
